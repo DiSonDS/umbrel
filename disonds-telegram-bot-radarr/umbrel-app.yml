@@ -14,8 +14,6 @@ description: >-
 
 developer: woiza
 website: https://github.com/woiza/telegram-bot-radarr
-dependencies:
-  - radarr
 submitter: DiSonDS
 submission: https://github.com/DiSonDS/umbrel
 repo: https://github.com/DiSonDS/umbrel

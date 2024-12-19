@@ -4,7 +4,7 @@ name: Telegram Bot Radarr
 tagline: Simple Telegram bot for Radarr
 icon: https://svgur.com/i/mvA.svg
 category: Media
-version: "1.0.1"
+version: "1.0.2"
 port: 4000
 description: >-
   Add your app's description here.
@@ -14,6 +14,8 @@ description: >-
 
 developer: woiza
 website: https://github.com/woiza/telegram-bot-radarr
+dependencies:
+  - radarr
 submitter: DiSonDS
 submission: https://github.com/DiSonDS/umbrel
 repo: https://github.com/DiSonDS/umbrel

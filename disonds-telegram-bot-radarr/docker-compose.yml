@@ -6,7 +6,7 @@ services:
       environment:
         # The format here is: <app-id>_<docker-service-name>_1
         APP_HOST: disonds-telegram-bot-radarr_bot_1
-        # APP_PORT: 3000
+        APP_PORT: 3000
 
     bot:
         image: woiza/telegram-bot-radarr:v1.1.8@sha256:1ce3193deb8d9df294d9b0ed2a9b99b3e338db50f2b26abb075841248331b266

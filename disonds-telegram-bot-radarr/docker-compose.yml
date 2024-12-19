@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+
+    app_proxy:
+      environment:
+        # The format here is: <app-id>_<docker-service-name>_1
+        APP_HOST: disonds-telegram-bot-radarr_bot_1
+        # APP_PORT: 3000
+
+    bot:
+        image: woiza/telegram-bot-radarr:v1.1.8@sha256:1ce3193deb8d9df294d9b0ed2a9b99b3e338db50f2b26abb075841248331b266
+        restart: on-failure
+        environment:
+            - RBOT_TELEGRAM_BOT_TOKEN=$APP_RBOT_TELEGRAM_BOT_TOKEN
+            - RBOT_BOT_ALLOWED_USERIDS=$APP_RBOT_BOT_ALLOWED_USERIDS # Telegram user ID(s), Group IDs are negative
+            - RBOT_BOT_MAX_ITEMS=10 # pagination
+            - RBOT_BOT_IGNORE_TAGS=false # true/false; true = bot will not ask for tags (useful with auto-tagging)
+            - RBOT_RADARR_PROTOCOL=http # http or https
+            - RBOT_RADARR_PORT=7878
+            - RBOT_RADARR_HOSTNAME=radarr_server_1 # IP or hostname
+            - RBOT_RADARR_BASE_URL=/radarr # optional, e.g. /radarr, depending on radarr configuration
+            - RBOT_RADARR_API_KEY=$APP_RBOT_RADARR_API_KEY

@@ -1,9 +1,9 @@
 manifestVersion: 1
-id: disonds-hello-world
-name: Hello World
-tagline: Replace this tagline with your app's tagline
+id: disonds-telegram-bot-radarr
+name: Telegram Bot Radarr
+tagline: Simple Telegram bot for Radarr
 icon: https://svgur.com/i/mvA.svg
-category: Development
+category: Media
 version: "1.0.0"
 port: 4000
 description: >-
@@ -12,12 +12,12 @@ description: >-
 
   You can also add newlines!
 
-developer: Umbrel
-website: https://umbrel.com
-submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel-hello-world-app
-repo: https://github.com/getumbrel/umbrel-hello-world-app
-support: https://github.com/getumbrel/umbrel-hello-world-app/issues
+developer: woiza
+website: https://github.com/woiza/telegram-bot-radarr
+submitter: DiSonDS
+submission: https://github.com/DiSonDS/umbrel
+repo: https://github.com/DiSonDS/umbrel
+support: https://github.com/DiSonDS/umbrel/issues
 gallery:
   - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg

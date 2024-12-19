@@ -4,7 +4,7 @@ name: Telegram Bot Radarr
 tagline: Simple Telegram bot for Radarr
 icon: https://svgur.com/i/mvA.svg
 category: media
-version: "1.0.2"
+version: "1.0.3"
 port: 4000
 description: >-
   Add your app's description here.

@@ -9,7 +9,6 @@ services:
   web:
     image: ghcr.io/egalitarianmonkey/hometube:v2.9.1@sha256:7880620d7058a3e8a1103cdaa19ffed0acb433dfa4eca35ae188b3e675569114
     restart: on-failure
-    user: "1000:1000"
     environment:
       TZ: ${TZ:-UTC}
       UI_LANGUAGE: en

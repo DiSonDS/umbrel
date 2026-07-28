@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-hometube
 category: media
 name: HomeTube
-version: "2.9.1"
+version: "2.9.1-1"
 tagline: Ad-free video & playlist downloader for your media server
 description: >-
   HomeTube is a friendly web UI for downloading single videos and playlists
@@ -34,7 +34,10 @@ gallery:
 path: ""
 defaultUsername: ""
 defaultPassword: ""
-releaseNotes: ""
+releaseNotes: >-
+  Fixes Downloads folder permissions so finished videos move to
+  Downloads/hometube instead of staying in the app temp folder.
+
 permissions:
   - STORAGE_DOWNLOADS
 backupIgnore:

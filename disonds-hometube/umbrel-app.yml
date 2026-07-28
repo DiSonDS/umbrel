@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-hometube
 category: media
 name: HomeTube
-version: "2.9.1-1"
+version: "2.9.1-2"
 tagline: Ad-free video & playlist downloader for your media server
 description: >-
   HomeTube is a friendly web UI for downloading single videos and playlists
@@ -28,20 +28,20 @@ repo: https://github.com/EgalitarianMonkey/hometube
 support: https://github.com/EgalitarianMonkey/hometube/issues
 port: 8510
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-hometube/1.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-hometube/2.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-hometube/3.png
 path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Fixes Downloads folder permissions so finished videos move to
-  Downloads/hometube instead of staying in the app temp folder.
+  Fixes Downloads permissions on the real umbrelOS mount path
+  (home/Downloads/hometube) so finished videos can be written there.
 
 permissions:
   - STORAGE_DOWNLOADS
 backupIgnore:
   - data/tmp/*
-icon: https://raw.githubusercontent.com/EgalitarianMonkey/hometube/main/docs/icons/favicon.svg
+icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-hometube/icon.svg
 submitter: DiSonDS
 submission: https://github.com/DiSonDS/umbrel

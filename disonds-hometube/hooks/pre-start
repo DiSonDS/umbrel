@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-UMBREL_STORAGE_DOWNLOADS_HOMETUBE_DIR="${UMBREL_ROOT}/data/storage/downloads/hometube"
+# umbrelOS keeps the legacy path in app packages, but rewrites the compose
+# mount to home/Downloads at runtime. Chown both so UID 1000 can write.
 DESIRED_OWNER="1000:1000"
-
-if [[ ! -d "${UMBREL_STORAGE_DOWNLOADS_HOMETUBE_DIR}" ]]; then
-  mkdir -p "${UMBREL_STORAGE_DOWNLOADS_HOMETUBE_DIR}"
-fi
 
 hometube_correct_permission() {
   local -r path="${1}"
+
+  mkdir -p "${path}"
 
   if [[ -d "${path}" ]]; then
     owner=$(stat -c "%u:%g" "${path}")
@@ -17,7 +16,10 @@ hometube_correct_permission() {
     if [[ "${owner}" != "${DESIRED_OWNER}" ]]; then
       chown "${DESIRED_OWNER}" "${path}"
     fi
+
+    chmod 775 "${path}"
   fi
 }
 
-hometube_correct_permission "${UMBREL_STORAGE_DOWNLOADS_HOMETUBE_DIR}"
+hometube_correct_permission "${UMBREL_ROOT}/data/storage/downloads/hometube"
+hometube_correct_permission "${UMBREL_ROOT}/home/Downloads/hometube"

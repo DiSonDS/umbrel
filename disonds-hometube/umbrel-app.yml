@@ -1,0 +1,44 @@
+manifestVersion: 1
+id: disonds-hometube
+category: media
+name: HomeTube
+version: "2.9.1"
+tagline: Ad-free video & playlist downloader for your media server
+description: >-
+  HomeTube is a friendly web UI for downloading single videos and playlists
+  with the best available quality, then organizing them for Plex, Jellyfin,
+  Emby, or local playback.
+
+
+  Paste a URL, pick quality if you want, and HomeTube handles ads/sponsors,
+  subtitles, and smart playlist sync across 1800+ sites (YouTube and more).
+
+
+  Downloaded videos are saved to Umbrel Downloads under hometube/. For reliable
+  YouTube downloads, place cookies in the app's config as youtube_cookies.txt
+  (see HomeTube docs).
+
+
+  Note: Community App Store apps are not vetted by the Umbrel team. Only install
+  from stores you trust.
+developer: EgalitarianMonkey
+website: https://hometube.egalitarianmonkey.com
+dependencies: []
+repo: https://github.com/EgalitarianMonkey/hometube
+support: https://github.com/EgalitarianMonkey/hometube/issues
+port: 8510
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+releaseNotes: ""
+permissions:
+  - STORAGE_DOWNLOADS
+backupIgnore:
+  - data/tmp/*
+icon: https://raw.githubusercontent.com/EgalitarianMonkey/hometube/main/docs/icons/favicon.svg
+submitter: DiSonDS
+submission: https://github.com/DiSonDS/umbrel

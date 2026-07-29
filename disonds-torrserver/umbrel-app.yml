@@ -1,0 +1,40 @@
+manifestVersion: 1
+id: disonds-torrserver
+category: media
+name: TorrServer
+version: MatriX.142.2
+tagline: Stream torrents over HTTP to any player on your network
+description: >-
+  TorrServer turns torrent magnet links and .torrent files into HTTP streams
+  you can open in VLC, TorrServe, Smart TVs, and other players — without
+  downloading the whole file first.
+
+
+  Open the web UI to add torrents, then play the stream URL from a client on
+  your LAN. Cached torrent data is saved to Umbrel Downloads under torrserver/.
+  Umbrel login is disabled for this app so companion clients can reach the API
+  and streams. Keep the app on a trusted network, or enable TorrServer's own
+  HTTP auth in its settings if you need it.
+
+
+  Note: Community App Store apps are not vetted by the Umbrel team. Only install
+  from stores you trust.
+developer: YouROK
+website: https://github.com/YouROK/TorrServer
+dependencies: []
+repo: https://github.com/YouROK/TorrServer
+support: https://github.com/YouROK/TorrServer/issues
+port: 8090
+gallery:
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/1.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/2.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/3.png
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+releaseNotes: ""
+permissions:
+  - STORAGE_DOWNLOADS
+icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/icon.png
+submitter: DiSonDS
+submission: https://github.com/DiSonDS/umbrel

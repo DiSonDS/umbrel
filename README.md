@@ -1,17 +1,42 @@
-## Umbrel Community App Store Template
+# DiSonDS Umbrel App Store
 
-This repository is a template to create an Umbrel Community App Store. These additional app stores allow developers to distribute applications without submitting to the [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps).
+Community App Store for [umbrelOS](https://umbrel.com). Apps here are packaged for one-click install and are **not** vetted by the Umbrel team — only install community stores you trust.
 
-## How to use:
+**Store ID:** `disonds`  
+**UI name:** DiSonDS App Store  
+**Gallery assets:** [DiSonDS/umbrel-gallery](https://github.com/DiSonDS/umbrel-gallery)
 
-1. Start by clicking the "Use this template" button located above.
-2. Assign an ID and name to your app store within the `umbrel-app-store.yml` file. This file specifies two important attributes:
-    - `id` - Acts as a unique prefix for every app within your Community App Store. You must start your application's ID with your app store's ID. For instance, in this template, the app store ID is `sparkles`, and there's an app named `hello world`. Consequently, the app's ID should be: `sparkles-hello-world`.
-    - `name` - This is the name of the Community App Store displayed in the umbrelOS UI.
-3. Change the name of the `sparkles-hello-world` folder to match your app's ID. The app ID is for you to decide. For example, if your app store ID is `whistles`, and your app is named My Video Downloader, you could set its app ID to `whistles-my-video-downloader`, and rename the folder accordingly.
-4. Next, enter your app's listing details in the `whistles-my-video-downloader/umbrel-app.yml`. These are displayed in the umbrelOS UI.
-5. Include the necessary Docker services in `whistles-my-video-downloader/docker-compose.yml`.
-6. That's it! Your Community App Store, featuring your unique app, is now set up and ready to go. To use your Community App Store, you can add its GitHub url the umbrelOS user interface as shown in the following demo:
+## Add this store in umbrelOS
 
+1. Open **App Store** → **⋯** / community stores
+2. Paste the GitHub URL: `https://github.com/DiSonDS/umbrel`
+3. Install apps from the DiSonDS store like any other Umbrel app
 
-https://user-images.githubusercontent.com/10330103/197889452-e5cd7e96-3233-4a09-b475-94b754adc7a3.mp4
+## Apps
+
+| App | ID | Category | Description |
+| --- | --- | --- | --- |
+| [HomeTube](disonds-hometube/) | `disonds-hometube` | media | Ad-free video & playlist downloader for your media server |
+| [TorrServer](disonds-torrserver/) | `disonds-torrserver` | media | Stream torrents over HTTP to any player on your network |
+
+## Repository layout
+
+```text
+umbrel-app-store.yml          # Store id + display name
+disonds-<app>/                # One directory per app (id must match folder name)
+  umbrel-app.yml              # App Store listing metadata
+  docker-compose.yml          # Runtime services (app_proxy + containers)
+  data/…                      # Optional scaffold for bind mounts
+  hooks/…                     # Optional lifecycle hooks
+```
+
+Conventions:
+
+- App IDs use the store prefix: `disonds-<name>`
+- Icons and gallery screenshots live in [umbrel-gallery](https://github.com/DiSonDS/umbrel-gallery) under `disonds-<app>/` and are referenced by raw GitHub URLs in `umbrel-app.yml`
+- Prefer the same Umbrel packaging rules as the [official App Store](https://github.com/getumbrel/umbrel-apps) (pinned images, `${APP_DATA_DIR}` persistence, `app_proxy`, etc.)
+
+## Related Umbrel repositories
+
+- [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps) — packages published in the official store
+- [Community App Store template](https://github.com/getumbrel/umbrel-community-app-store) — starter template for custom stores like this one

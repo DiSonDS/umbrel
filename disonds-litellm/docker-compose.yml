@@ -1,0 +1,48 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: disonds-litellm_web_1
+      APP_PORT: 4000
+      # API clients authenticate with LiteLLM virtual/master keys (Bearer),
+      # not Umbrel session cookies.
+      PROXY_AUTH_ADD: "false"
+
+  web:
+    image: ghcr.io/berriai/litellm-database:v1.94.0@sha256:8075b09298dc2453316ebe6152603da34d4b1a0661a3cd756a11191a5b40d59c
+    restart: on-failure
+    environment:
+      LITELLM_MASTER_KEY: sk-${APP_PASSWORD}
+      LITELLM_SALT_KEY: sk-${APP_SEED}
+      DATABASE_URL: postgresql://litellm:${APP_PASSWORD}@disonds-litellm_db_1:5432/litellm
+      STORE_MODEL_IN_DB: "True"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - python3 -c "import urllib.request; urllib.request.urlopen('http://localhost:4000/health/liveliness')"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  db:
+    image: postgres:16-alpine@sha256:23e88eb049fd5d54894d70100df61d38a49ed97909263f79d4ff4c30a5d5fca2
+    restart: on-failure
+    user: "1000:1000"
+    environment:
+      POSTGRES_DB: litellm
+      POSTGRES_USER: litellm
+      POSTGRES_PASSWORD: ${APP_PASSWORD}
+      PGUSER: litellm
+    volumes:
+      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready
+      start_period: 20s
+      interval: 10s

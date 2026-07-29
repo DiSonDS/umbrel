@@ -1,0 +1,42 @@
+manifestVersion: 1
+id: disonds-litellm
+category: ai
+name: LiteLLM
+version: "1.94.0"
+tagline: OpenAI-compatible gateway for 100+ LLM providers
+description: >-
+  LiteLLM is an open-source AI gateway that gives you one OpenAI-compatible API
+  for 100+ LLM providers — OpenAI, Anthropic, Gemini, Azure, Bedrock, Ollama,
+  and more.
+
+
+  Open the Admin UI to connect providers, add models, create virtual keys, and
+  track spend. Point any OpenAI-compatible client at this app's URL with a
+  virtual key (or the master key) as the API key.
+
+
+  Sign in to the Admin UI as admin. The password is sk- followed by the app
+  password shown in Umbrel (for example sk-abcd1234…). Umbrel login is disabled
+  for this app so API clients can authenticate with LiteLLM keys directly. Keep
+  the app on a trusted network.
+
+
+  Note: Community App Store apps are not vetted by the Umbrel team. Only install
+  from stores you trust.
+developer: BerriAI
+website: https://docs.litellm.ai
+dependencies: []
+repo: https://github.com/BerriAI/litellm
+support: https://github.com/BerriAI/litellm/issues
+port: 4000
+gallery:
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-litellm/1.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-litellm/2.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-litellm/3.png
+path: "/ui"
+defaultUsername: admin
+deterministicPassword: true
+releaseNotes: ""
+icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-litellm/icon.png
+submitter: DiSonDS
+submission: https://github.com/DiSonDS/umbrel

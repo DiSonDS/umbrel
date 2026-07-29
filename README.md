@@ -17,6 +17,7 @@ Community App Store for [umbrelOS](https://umbrel.com). Apps here are packaged f
 | App | ID | Category | Description |
 | --- | --- | --- | --- |
 | [HomeTube](disonds-hometube/) | `disonds-hometube` | media | Ad-free video & playlist downloader for your media server |
+| [LiteLLM](disonds-litellm/) | `disonds-litellm` | ai | OpenAI-compatible gateway for 100+ LLM providers |
 | [TorrServer](disonds-torrserver/) | `disonds-torrserver` | media | Stream torrents over HTTP to any player on your network |
 
 ## Repository layout

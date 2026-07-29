@@ -13,8 +13,12 @@ services:
     image: ghcr.io/berriai/litellm-database:v1.94.0@sha256:8075b09298dc2453316ebe6152603da34d4b1a0661a3cd756a11191a5b40d59c
     restart: on-failure
     environment:
+      # Master key must start with sk- (API / proxy admin). UI login uses
+      # UI_PASSWORD so it matches the plain APP_PASSWORD Umbrel shows.
       LITELLM_MASTER_KEY: sk-${APP_PASSWORD}
       LITELLM_SALT_KEY: sk-${APP_SEED}
+      UI_USERNAME: admin
+      UI_PASSWORD: ${APP_PASSWORD}
       DATABASE_URL: postgresql://litellm:${APP_PASSWORD}@disonds-litellm_db_1:5432/litellm
       STORE_MODEL_IN_DB: "True"
     depends_on:

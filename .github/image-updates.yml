@@ -1,0 +1,14 @@
+# Configuration for scripts/update-app-images.py
+#
+# Scans app directories matching app_globs that contain both
+# docker-compose.yml and umbrel-app.yml.
+
+app_globs:
+  - "disonds-*"
+
+# Optional per-app overrides:
+# apps:
+#   disonds-litellm:
+#     ignore_services:
+#       - db
+apps: {}

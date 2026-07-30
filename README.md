@@ -37,6 +37,32 @@ Conventions:
 - Icons and gallery screenshots live in [umbrel-gallery](https://github.com/DiSonDS/umbrel-gallery) under `disonds-<app>/` and are referenced by raw GitHub URLs in `umbrel-app.yml`
 - Prefer the same Umbrel packaging rules as the [official App Store](https://github.com/getumbrel/umbrel-apps) (pinned images, `${APP_DATA_DIR}` persistence, `app_proxy`, etc.)
 
+## Automatic image update PRs
+
+A daily GitHub Actions workflow checks whether app images are still current and opens **one PR per app** when an update is available. Nothing is merged automatically — review and merge by hand.
+
+What it does:
+
+1. Scans each `disonds-*/` app (see [`.github/image-updates.yml`](.github/image-updates.yml))
+2. Looks at upstream GitHub Releases (`repo` in `umbrel-app.yml`) for a newer primary image tag
+3. Resolves the multi-arch digest with `docker buildx imagetools inspect` and requires `linux/amd64` + `linux/arm64`
+4. Refreshes sidecar digests on the same tag when they drift (for example `postgres:16-alpine`)
+5. Updates `docker-compose.yml` image pins plus `version` / `releaseNotes` in `umbrel-app.yml`
+6. Opens or updates `chore/update-<app-id>`
+
+| Trigger | When |
+| --- | --- |
+| Schedule | Daily at 06:00 UTC |
+| Manual | Actions → **Update app images** → Run workflow |
+
+Local dry-run:
+
+```sh
+pip install pyyaml
+python scripts/update-app-images.py
+# optional: python scripts/update-app-images.py --app disonds-hometube --write
+```
+
 ## Related Umbrel repositories
 
 - [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps) — packages published in the official store

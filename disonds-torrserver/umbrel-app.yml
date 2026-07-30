@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-torrserver
 category: media
 name: TorrServer
-version: MatriX.142.2
+version: MatriX.142.2-1
 tagline: Stream torrents over HTTP to any player on your network
 description: >-
   TorrServer turns torrent magnet links and .torrent files into HTTP streams
@@ -24,7 +24,7 @@ website: https://github.com/YouROK/TorrServer
 dependencies: []
 repo: https://github.com/YouROK/TorrServer
 support: https://github.com/YouROK/TorrServer/issues
-port: 8090
+port: 8097
 gallery:
   - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/1.png
   - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/2.png
@@ -32,7 +32,9 @@ gallery:
 path: ""
 defaultUsername: ""
 defaultPassword: ""
-releaseNotes: ""
+releaseNotes: >-
+  Moves the app to host port 8097 to avoid a conflict with the official
+  Urbit app (8090). Container port stays 8090.
 permissions:
   - STORAGE_DOWNLOADS
 icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/icon.png

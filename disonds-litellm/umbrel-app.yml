@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-litellm
 category: ai
 name: LiteLLM
-version: "1.94.0-2"
+version: "1.94.0-3"
 tagline: OpenAI-compatible gateway for 100+ LLM providers
 description: >-
   LiteLLM is an open-source AI gateway that gives you one OpenAI-compatible API
@@ -36,9 +36,7 @@ path: "/ui"
 defaultUsername: admin
 deterministicPassword: true
 releaseNotes: >-
-  Moves the app to host port 4001 to avoid a conflict with the official
-  Ordinals app (4000). Also keeps the Admin UI login fix (UI_USERNAME /
-  UI_PASSWORD matching the Umbrel-shown password).
+  Refreshes pinned sidecar image digest(s) for LiteLLM (1.94.0-3).
 
 icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-litellm/icon.png
 submitter: DiSonDS

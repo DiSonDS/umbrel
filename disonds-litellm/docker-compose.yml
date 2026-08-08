@@ -10,7 +10,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   web:
-    image: ghcr.io/berriai/litellm-database:v1.94.0@sha256:8075b09298dc2453316ebe6152603da34d4b1a0661a3cd756a11191a5b40d59c
+    image: ghcr.io/berriai/litellm-database:v1.94.2@sha256:864e425c0395c1e539b228d26e6eda4f1c391fe6b275711bbb9e7b0d569f6e06
     restart: on-failure
     environment:
       # Master key must start with sk- (API / proxy admin). UI login uses

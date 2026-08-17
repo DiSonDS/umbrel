@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-torrserver
 category: media
 name: TorrServer
-version: MatriX.142.2-1
+version: "MatriX.142.4"
 tagline: Stream torrents over HTTP to any player on your network
 description: >-
   TorrServer turns torrent magnet links and .torrent files into HTTP streams
@@ -33,8 +33,13 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Moves the app to host port 8097 to avoid a conflict with the official
-  Urbit app (8090). Container port stays 8090.
+  ## What's Changed * Fix TrackTimecode API reset when marking files as viewed
+  by @VuzzyM in https://github.com/YouROK/TorrServer/pull/829 * chore(deps):
+  bump nanoid from 3.3.8 to 3.3.18 in /web by @dependabot[bot] in
+  https://github.com/YouROK/TorrServer/pull/828 * chore(deps): bump js-yaml from
+  3.15.0 to 3.15.1 in /web by @dependabot[bot] in
+  https://github.com/YouROK/TorrServer/pull/827 * fix(to...
+
 permissions:
   - STORAGE_DOWNLOADS
 icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-torrserver/icon.png

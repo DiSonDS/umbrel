@@ -486,6 +486,17 @@ def open_or_update_pr(update: AppUpdate, branch: str, base: str) -> None:
     )
     if existing.returncode == 0 and json.loads(existing.stdout or "[]"):
         pr = json.loads(existing.stdout)[0]
+        run_cmd(
+            gh_args(
+                "pr",
+                "edit",
+                str(pr["number"]),
+                "--title",
+                title,
+                "--body-file",
+                str(body_file),
+            )
+        )
         print(f"Updated existing PR for {update.app_id}: {pr['url']}")
         return
 

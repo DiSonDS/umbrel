@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-hometube
 category: media
 name: HomeTube
-version: "2.9.1-2"
+version: "2.10.0"
 tagline: Ad-free video & playlist downloader for your media server
 description: >-
   HomeTube is a friendly web UI for downloading single videos and playlists
@@ -35,8 +35,12 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Fixes Downloads permissions on the real umbrelOS mount path
-  (home/Downloads/hometube) so finished videos can be written there.
+  HomeTube 2.10.0 fixes two user-reported issues — wrong audio track selection
+  and runaway memory on fragmented downloads — and makes configuration more
+  forgiving. ## 🎧 The right audio track, every time Some videos ship several
+  audio tracks, and the *original* language is not always the one your region
+  gets by *default*. In that situation HomeTube could pick the dub — a video
+  with a Spanish origi...
 
 permissions:
   - STORAGE_DOWNLOADS

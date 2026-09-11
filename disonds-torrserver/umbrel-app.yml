@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-torrserver
 category: media
 name: TorrServer
-version: "MatriX.144.1"
+version: "MatriX.144.2"
 tagline: Stream torrents over HTTP to any player on your network
 description: >-
   TorrServer turns torrent magnet links and .torrent files into HTTP streams
@@ -36,9 +36,9 @@ releaseNotes: >-
   ## What's Changed * feat(web): add one-click VLC action to single-file torrent
   cards by @SHAREN in https://github.com/YouROK/TorrServer/pull/815 * Add
   AppImage support for Linux amd64, arm64 and arm7 by @VuzzyM in
-  https://github.com/YouROK/TorrServer/pull/838 ## New Contributors * @SHAREN
-  made their first contribution in https://github.com/YouROK/TorrServer/pull/815
-  **Full Changelog**: https://...
+  https://github.com/YouROK/TorrServer/pull/838 * feat: manual categories for
+  torznab by @DrachenClon22 in https://github.com/YouROK/TorrServer/pull/841 *
+  Update Romanian translations b...
 
 permissions:
   - STORAGE_DOWNLOADS

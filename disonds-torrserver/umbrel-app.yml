@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-torrserver
 category: media
 name: TorrServer
-version: "MatriX.144.3"
+version: "MatriX.144.5"
 tagline: Stream torrents over HTTP to any player on your network
 description: >-
   TorrServer turns torrent magnet links and .torrent files into HTTP streams
@@ -33,8 +33,10 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  - mute LPD excessive logging **Full Changelog**:
-  https://github.com/YouROK/TorrServer/compare/MatriX.144.2...MatriX.144.3
+  ## What's Changed * feat: add MergeAllM3U setting to merge all torrent
+  playlists into a single all.m3u by @VuzzyM in
+  https://github.com/YouROK/TorrServer/pull/867 **Full Changelog**:
+  https://github.com/YouROK/TorrServer/compare/MatriX.144.4...MatriX.144.5
 
 permissions:
   - STORAGE_DOWNLOADS

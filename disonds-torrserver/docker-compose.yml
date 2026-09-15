@@ -9,7 +9,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   web:
-    image: ghcr.io/yourok/torrserver:MatriX.144.3@sha256:918ce341bf64650dcdae98fed27b11962f38d6efae28bf0da48d4eeffb44040e
+    image: ghcr.io/yourok/torrserver:MatriX.144.5@sha256:0db8e8eae5ad80ef0ad1da5f0a3fb95989fdb376bb32337d6872aba1a23c2380
     restart: on-failure
     environment:
       TS_PORT: "8090"

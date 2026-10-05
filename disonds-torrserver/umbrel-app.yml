@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-torrserver
 category: media
 name: TorrServer
-version: "MatriX.145.1"
+version: "MatriX.145.2"
 tagline: Stream torrents over HTTP to any player on your network
 description: >-
   TorrServer turns torrent magnet links and .torrent files into HTTP streams
@@ -33,12 +33,13 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  ## What's Changed * fix: send a User-Agent when checking poster images by
-  @uPagge in https://github.com/YouROK/TorrServer/pull/882 * fix: retry BT
-  client connect after settings save by @uPagge in
-  https://github.com/YouROK/TorrServer/pull/883 * fix(macos): plist file update
-  process by @pavelpikta in https://github.com/YouROK/TorrServer/pull/874 *
-  refactor: image URL validation by @pavelpikta in...
+  ## What's Changed * fix(ssl): never replace user-supplied certs, tighten
+  generated key perms by @lieranderl in
+  https://github.com/YouROK/TorrServer/pull/884 * fix: find Entware root CA
+  certificates for outgoing HTTPS by @lieranderl in
+  https://github.com/YouROK/TorrServer/pull/890 * test(rutor): skip parse tests
+  when rutor.ls is missing by @lieranderl in
+  https://github.com/YouROK/TorrServer/pull...
 
 permissions:
   - STORAGE_DOWNLOADS

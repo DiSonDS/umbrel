@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-torrserver
 category: media
 name: TorrServer
-version: "MatriX.145.2"
+version: "MatriX.146"
 tagline: Stream torrents over HTTP to any player on your network
 description: >-
   TorrServer turns torrent magnet links and .torrent files into HTTP streams
@@ -33,13 +33,13 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  ## What's Changed * fix(ssl): never replace user-supplied certs, tighten
-  generated key perms by @lieranderl in
-  https://github.com/YouROK/TorrServer/pull/884 * fix: find Entware root CA
-  certificates for outgoing HTTPS by @lieranderl in
-  https://github.com/YouROK/TorrServer/pull/890 * test(rutor): skip parse tests
-  when rutor.ls is missing by @lieranderl in
-  https://github.com/YouROK/TorrServer/pull...
+  ## What's Changed * feat(ssl): manage the HTTPS certificate from the web UI
+  without a restart by @lieranderl in
+  https://github.com/YouROK/TorrServer/pull/899 * perf: buffer HTTP stream reads
+  to reduce client-lock contention by @vladikshkwok in
+  https://github.com/YouROK/TorrServer/pull/900 ## New Contributors *
+  @vladikshkwok made their first contribution in
+  https://github.com/YouROK/TorrServer/p...
 
 permissions:
   - STORAGE_DOWNLOADS

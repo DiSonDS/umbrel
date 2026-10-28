@@ -1,0 +1,46 @@
+manifestVersion: 1
+id: disonds-voicestudio
+category: ai
+name: VoiceStudio
+version: "0.5.7"
+tagline: Local voice cloning, dubbing, dictation, and transcription
+description: >-
+  VoiceStudio is a local voice studio: clone a voice, design one, dub video,
+  dictate, transcribe, and narrate. The web UI is the same studio as the
+  desktop app, and audio stays on this Umbrel.
+
+
+  Open the app and sign in with the password shown in Umbrel. That password
+  is VoiceStudio's access key. The first model you install downloads about
+  2.4 GB into the app's data. Generation runs on CPU, so it is slower than on
+  a GPU.
+
+
+  This package is linux/amd64 only (Umbrel Home and other x86_64 devices). It
+  does not run on Raspberry Pi.
+
+
+  Note: Community App Store apps are not vetted by the Umbrel team. Only install
+  from stores you trust.
+developer: Palash Debnath
+website: https://voicestudio.sh
+dependencies: []
+repo: https://github.com/debpalash/VoiceStudio
+support: https://github.com/debpalash/VoiceStudio/issues
+port: 3900
+gallery:
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-voicestudio/1.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-voicestudio/2.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-voicestudio/3.png
+  - https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-voicestudio/4.png
+path: ""
+defaultUsername: ""
+deterministicPassword: true
+releaseNotes: >-
+  First Umbrel package of VoiceStudio 0.5.7. Serves the web studio on port
+  3900 for linux/amd64.
+backupIgnore:
+  - data/huggingface/*
+icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-voicestudio/icon.svg
+submitter: DiSonDS
+submission: https://github.com/DiSonDS/umbrel

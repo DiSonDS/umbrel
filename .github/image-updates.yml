@@ -11,4 +11,11 @@ app_globs:
 #   disonds-litellm:
 #     ignore_services:
 #       - db
-apps: {}
+#   disonds-voicestudio:
+#     platforms:
+#       - linux/amd64
+apps:
+  disonds-voicestudio:
+    # CPU/CUDA image is linux/amd64. The arm64 tag is a different NVIDIA image.
+    platforms:
+      - linux/amd64

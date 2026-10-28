@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: disonds-voicestudio_web_1
+      APP_PORT: 3900
+
+  web:
+    # linux/amd64 only. Upstream's arm64 tag is a separate NVIDIA CUDA image.
+    image: ghcr.io/debpalash/voicestudio:0.5.7@sha256:65f1305c749c759d3656fed5f12623a98aff11e5f326d28bf7095cb57f3a9e0b
+    restart: on-failure
+    environment:
+      TZ: ${TZ:-UTC}
+      HF_HOME: /app/omnivoice_data/huggingface
+      OMNIVOICE_DATA_DIR: /app/omnivoice_data
+      PYTHONPATH: /app/backend
+      PYTHONUNBUFFERED: "1"
+      # The image listens on 0.0.0.0. Server mode lets the web UI work through
+      # Docker NAT. The password Umbrel shows is the access key the UI asks for.
+      OMNIVOICE_SERVER_MODE: "1"
+      OMNIVOICE_API_KEY: ${APP_PASSWORD}
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/omnivoice_data
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:3900/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s

@@ -19,6 +19,7 @@ Community App Store for [umbrelOS](https://umbrel.com). Apps here are packaged f
 | [HomeTube](https://github.com/EgalitarianMonkey/hometube) | `disonds-hometube` | media | Ad-free video & playlist downloader for your media server | 8510 |
 | [TorrServer](https://github.com/YouROK/TorrServer) | `disonds-torrserver` | media | Stream torrents over HTTP to any player on your network | 8097 |
 | [LiteLLM](https://github.com/BerriAI/litellm) | `disonds-litellm` | ai | OpenAI-compatible gateway for 100+ LLM providers | 4001 |
+| [VoiceStudio](https://github.com/debpalash/VoiceStudio) | `disonds-voicestudio` | ai | Local voice cloning, dubbing, dictation, and transcription (amd64) | 3900 |
 
 ## Repository layout
 

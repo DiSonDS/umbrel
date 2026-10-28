@@ -87,11 +87,19 @@ class AppUpdate:
     release_url: str | None
     changes: list[ImageChange] = field(default_factory=list)
     skip_reason: str | None = None
+    required_platforms: tuple[str, ...] = ()
 
 
 def load_yaml(path: Path) -> Any:
     with path.open(encoding="utf-8") as handle:
         return yaml.safe_load(handle)
+
+
+def configured_platforms(app_cfg: dict[str, Any]) -> set[str]:
+    raw = app_cfg.get("platforms")
+    if not raw:
+        return set(REQUIRED_PLATFORMS)
+    return {str(item) for item in raw}
 
 
 def load_config(path: Path) -> dict[str, Any]:
@@ -439,12 +447,15 @@ def build_pr_body(update: AppUpdate) -> str:
             f"- `{change.service}`: `{change.old.pinned}` → `{change.new.pinned}` "
             f"({change.reason})"
         )
+    platforms = ", ".join(
+        update.required_platforms or tuple(sorted(REQUIRED_PLATFORMS))
+    )
     lines.extend(
         [
             "",
             "## Verification",
             "- Digests resolved with `docker buildx imagetools inspect`",
-            f"- Required platforms: `{', '.join(sorted(REQUIRED_PLATFORMS))}`",
+            f"- Required platforms: `{platforms}`",
         ]
     )
     if update.release_url:
@@ -547,6 +558,7 @@ def plan_app_update(
     app_id = app_dir.name
     app_cfg = (config.get("apps") or {}).get(app_id) or {}
     ignore_services = set(app_cfg.get("ignore_services") or [])
+    platforms_required = configured_platforms(app_cfg)
 
     compose = load_yaml(app_dir / "docker-compose.yml")
     manifest = load_yaml(app_dir / "umbrel-app.yml")
@@ -624,7 +636,7 @@ def plan_app_update(
             print(f"Warning: {app_id}/{service.service}: inspect failed: {exc}")
             continue
 
-        missing = REQUIRED_PLATFORMS - platforms
+        missing = platforms_required - platforms
         # Single-arch images sometimes report platforms only via human output;
         # if platforms is empty, re-check via human inspect before failing.
         if missing and platforms:
@@ -653,7 +665,7 @@ def plan_app_update(
                 f"{m.group(1)}/{m.group(2)}"
                 for m in re.finditer(r"Platform:\s*(linux)/(amd64|arm64)", human.stdout)
             )
-            missing = REQUIRED_PLATFORMS - found
+            missing = platforms_required - found
             if missing:
                 if service.is_primary:
                     return AppUpdate(
@@ -730,6 +742,7 @@ def plan_app_update(
         release_notes=notes,
         release_url=release_url,
         changes=changes,
+        required_platforms=tuple(sorted(platforms_required)),
     )
 
 

@@ -7,7 +7,7 @@ services:
       APP_PORT: 8501
 
   web:
-    image: ghcr.io/egalitarianmonkey/hometube:v2.10.0@sha256:5e205725259336ecf9e2ce02261da114e7e9076cacc9b4b04bff6ce9117994af
+    image: ghcr.io/egalitarianmonkey/hometube:v2.13.2@sha256:1563c9d0201eb37e304ccc94e57e27f60638d310ea073edb0c6768fcd691dc0d
     restart: on-failure
     environment:
       TZ: ${TZ:-UTC}

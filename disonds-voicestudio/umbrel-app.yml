@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-voicestudio
 category: ai
 name: VoiceStudio
-version: "0.5.7"
+version: "0.5.8"
 tagline: Local voice cloning, dubbing, dictation, and transcription
 description: >-
   VoiceStudio is a local voice studio: clone a voice, design one, dub video,
@@ -37,8 +37,12 @@ path: ""
 defaultUsername: ""
 deterministicPassword: true
 releaseNotes: >-
-  First Umbrel package of VoiceStudio 0.5.7. Serves the web studio on port
-  3900 for linux/amd64.
+  ### Download | Platform | Download | Signing | |---|---|---| | Windows x64 |
+  [Installer](https://github.com/debpalash/VoiceStudio/releases/download/v0.5.8/VoiceStudio-0.5.8-win-x64.exe)
+  | ⚠️ Unsigned: SmartScreen shows "Windows protected your PC"; choose More info
+  → Run anyway | | Windows ARM64 (experimental) |
+  [Installer](https://github.com/debpalash/VoiceStudio/releases/download/v0.5.8/VoiceS...
+
 backupIgnore:
   - data/huggingface/*
 icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-voicestudio/icon.svg

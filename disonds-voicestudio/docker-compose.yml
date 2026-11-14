@@ -8,7 +8,7 @@ services:
 
   web:
     # linux/amd64 only. Upstream's arm64 tag is a separate NVIDIA CUDA image.
-    image: ghcr.io/debpalash/voicestudio:0.5.7@sha256:65f1305c749c759d3656fed5f12623a98aff11e5f326d28bf7095cb57f3a9e0b
+    image: ghcr.io/debpalash/voicestudio:0.5.8@sha256:9cfc492a350ea34ad65ac991cf3b9e0030e3318d684c26435a6a44b074871f0d
     restart: on-failure
     environment:
       TZ: ${TZ:-UTC}

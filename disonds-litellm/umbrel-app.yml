@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-litellm
 category: ai
 name: LiteLLM
-version: "1.108.0"
+version: "1.108.8"
 tagline: OpenAI-compatible gateway for 100+ LLM providers
 description: >-
   LiteLLM is an open-source AI gateway that gives you one OpenAI-compatible API
@@ -36,12 +36,12 @@ path: "/ui"
 defaultUsername: admin
 deterministicPassword: true
 releaseNotes: >-
-  ## Verify Docker Image Signature All LiteLLM Docker images are signed with
-  [cosign](https://docs.sigstore.dev/cosign/overview/). This release is signed
-  with the key introduced in [commit
-  `e82a3c6`](https://github.com/BerriAI/litellm/commit/e82a3c646908ba0a6ee0beddc4310d7a6cac4065).
-  **Verify using the pinned commit hash (recommended):** A commit hash is
-  cryptographically immutable, so this is th...
+  > [!TIP] > The `lts` image tag always points to the latest LTS release. Pull
+  `ghcr.io/berriai/litellm:lts` to stay on the newest LTS patch ## Verify this
+  release ```bash cosign verify \ --key
+  https://raw.githubusercontent.com/BerriAI/litellm/e82a3c646908ba0a6ee0beddc4310d7a6cac4065/cosign.pub
+  \ ghcr.io/berriai/litellm:v1.108.8 ``` Same command for `litellm-database`,
+  `litellm-non_root` and the...
 
 icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-litellm/icon.png
 submitter: DiSonDS

@@ -10,7 +10,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   web:
-    image: ghcr.io/berriai/litellm-database:v1.108.0@sha256:80c91fd00cc039e8880474f539544b919f14cd258a22f22ce4218b864c4ff14a
+    image: ghcr.io/berriai/litellm-database:v1.108.8@sha256:277bb7109e59cedf9ddd48a367ecc72a9ddcc86060c4a50fa1fd78fe4c67f28d
     restart: on-failure
     environment:
       # Master key must start with sk- (API / proxy admin). UI login uses
@@ -34,7 +34,7 @@ services:
       start_period: 60s
 
   db:
-    image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+    image: postgres:16-alpine@sha256:f377d590e5474681d4d7838635031a2b50647923b7abfa803ce9b5ff35d5c663
     restart: on-failure
     user: "1000:1000"
     environment:

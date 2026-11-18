@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-torrserver
 category: media
 name: TorrServer
-version: "MatriX.149"
+version: "MatriX.150"
 tagline: Stream torrents over HTTP to any player on your network
 description: >-
   TorrServer turns torrent magnet links and .torrent files into HTTP streams
@@ -33,12 +33,12 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  ## What's Changed * chore(deps): bump fast-uri from 3.1.8 to 3.1.9 in /web by
-  @dependabot[bot] in https://github.com/YouROK/TorrServer/pull/950 * feat(web):
-  add search bar in web/pwa by @Drafteed in
-  https://github.com/YouROK/TorrServer/pull/951 * fix(torznab): search a host
-  saved without http:// like the test does by @jayhemnani9910 in
-  https://github.com/YouROK/TorrServer/pull/952 * fix(gstream...
+  ## What's Changed * fix(web): fix iOS PWA status bar blur and viewport layout
+  by @Drafteed in https://github.com/YouROK/TorrServer/pull/959 * fix(web): fix
+  PWA dialog outside-click handling by @Drafteed in
+  https://github.com/YouROK/TorrServer/pull/960 * fix(gstreamer): stabilize HEVC
+  HDR caps before MP4 muxing by @mvanhorn in
+  https://github.com/YouROK/TorrServer/pull/958 ## New Contributors * @...
 
 permissions:
   - STORAGE_DOWNLOADS

@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-litellm
 category: ai
 name: LiteLLM
-version: "1.110.0"
+version: "1.108.20"
 tagline: OpenAI-compatible gateway for 100+ LLM providers
 description: >-
   LiteLLM is an open-source AI gateway that gives you one OpenAI-compatible API
@@ -36,12 +36,12 @@ path: "/ui"
 defaultUsername: admin
 deterministicPassword: true
 releaseNotes: >-
-  ## Verify Docker Image Signature ```bash cosign verify \
-  --certificate-identity
+  > [!TIP] > The `lts` image tag always points to the latest LTS release. Pull
+  `ghcr.io/berriai/litellm:lts` to stay on the newest LTS patch ## Verify this
+  release ```bash cosign verify \ --certificate-identity
   https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main
   \ --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  ghcr.io/berriai/litellm:v1.110.0 ``` ## What's Changed * fix(gemini)!: answer
-  400 for an unsupported chat audio format, drop it under drop_params by @pav...
+  ghcr.io/berriai/litellm:...
 
 icon: https://raw.githubusercontent.com/DiSonDS/umbrel-gallery/main/disonds-litellm/icon.png
 submitter: DiSonDS

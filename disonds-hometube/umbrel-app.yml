@@ -2,7 +2,7 @@ manifestVersion: 1
 id: disonds-hometube
 category: media
 name: HomeTube
-version: "2.13.2"
+version: "2.13.3"
 tagline: Ad-free video & playlist downloader for your media server
 description: >-
   HomeTube is a friendly web UI for downloading single videos and playlists
@@ -35,12 +35,12 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  *There is no 2.13.1 release: that tag's release build failed, so 2.13.2
-  carries everything since 2.13.0.* ## Security **Pillow 13.0.0 — 41 advisories
-  closed, 5 of them critical.** Pillow is not a HomeTube dependency; it comes
-  with Streamlit, which capped it below 13 until 1.66.1. HomeTube now runs
-  Streamlit 1.66.1, and the image ships Pillow 13.0.0 on both amd64 and arm64
-  (#175). HomeTube never...
+  <!-- Release notes generated using configuration in .github/release.yml at
+  v2.13.3 --> ## What's Changed ### 🐛 Fixes * fix(download): profile analysis
+  builds invalid JSON when yt-dlp reports no filesize by @EgalitarianMonkey in
+  https://github.com/EgalitarianMonkey/hometube/pull/185 * fix(integrations):
+  Jellyfin 12.4 rejects X-Emby-Token, so the library refresh silently did
+  nothing by @Egalitari...
 
 permissions:
   - STORAGE_DOWNLOADS
